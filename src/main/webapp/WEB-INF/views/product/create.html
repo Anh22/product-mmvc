@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${mess}"></h1>
+<a href="/products">List Product</a>
+<form action="/products/save" method="post">
+    <input type="text" name="id">
+    <input type="text" name="name">
+    <input type="text" name="price">
+    <button>Add</button>
+</form>
+</body>
+</html>

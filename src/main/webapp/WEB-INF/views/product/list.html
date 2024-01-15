@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</head>
+<body>
+Hi AE <h1 th:text="${x}"></h1>
+<div  th:each="item : ${list}" >
+    <span th:text="${item.id}"></span>
+    <span th:text="${item.name}"></span>
+    <span th:text="${item.price}"></span>
+    <a th:href="@{'/products/edit/' + ${item.id}}">Edit</a>
+    <a th:href="@{'/products/delete/' + ${item.id}}">Delete</a>
+
+</div>
+<form action="/products/search" method="get">
+    <input type="text" name="name" th:value="${searchTerm}" placeholder="Search by name">
+    <button type="submit">Search</button>
+</form>
+<a href="/products/create">Them di con cho</a>
+
+
+
+</body>
+</html>
